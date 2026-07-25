@@ -1,87 +1,107 @@
+# 🌌 Aether Agent Platform
 
-### Hello, I'm Jerome. I have the following attributes
+**The Distributed Cognitive Substrate for Autonomous Engineering.**
 
-- I bike
-- I meet
-- I learn
-- I climb
-- I laugh
-- I code
-- I rock a great beard
-- I'm a handsome genius &#8482;
-- I succeed the Completely Automated Public Turing test to tell Computers and Humans Apart
+![Aether Platform Visual Overview](./assets/img/aether_visual_overview.webp)
 
-### What else do you need?
+Aether is a next-generation Internal Developer Platform (IDP) where humans and AI agents collaborate to architect, provision, and operate global infrastructure. By leveraging a "10x" refactored stack, Aether achieves massive scalability, strict tenant isolation, OpenTelemetry/Prometheus observability, closed-loop SRE verification, and zero-loss execution recovery at the edge.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+---
 
-### I'm born and raised in [Brussels, Belgium](https://goo.gl/maps/Xhy4aBu1WYrbBHe97)
+## 🗺️ Quick Navigation
 
-This is an example author bio, and although there's no stock photo of a dog here, this article was actually created by a human. `/net/dev` is my online garage 
+- 🖼️ **[System Architecture Visual Overview](./Docs/ROADMAP.md)** $\leftarrow$ *Start here for the interactive and colorful architectural canvas.*
+- 📖 **[Platform Engineering Guide & Specifications](./Docs/PLATFORM_GUIDE.md)**: Unified platform spec, 4-layer architecture, metrics, and API reference interfaces.
+- 🛠️ **[Getting Started](./Docs/GETTING_STARTED.md)**: Setup local development environment and run pipelines.
+- ⚡ **[Edge Workstation Build & Deploy CLI](./scripts/build-deploy.sh)**: Interactive agent-free deployment tool with live Tekton log streaming.
+- 📈 **[Project Deployment Status](./Docs/project_status.md)**: Live handover specifications, K3s edge node topology, and multi-node status.
+- 🧠 **[Architecture Evolution Refactor Blueprint](./Docs/ARCHITECTURE_REFACTOR.md)**: Zero-loss execution metrics, memory snapshots, and instant state-teleport mechanics.
 
-![Yellow Duck](/assets/img/logo.png 'Logo')
+---
 
-## Things I do
+## 🏗️ Technical Architecture Core
 
-I build trusted relationships with people by listening to their needs and meet them where they are in their transformation.
+Below is the live declarative flow of the **Aether Cognitive Substrate**, illustrating how requests stream event-driven trajectories directly from the developer portal through the Google AX single-writer durability logs into high-density gVisor sandboxes and OpenTelemetry collectors.
 
-```javascript
-var innovate = function(x) {
-  return(10x);
-}
-innovate("whats_next")
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#FFF205', 'primaryTextColor': '#000000', 'primaryBorderColor': '#FFD700', 'lineColor': '#FFD700', 'secondaryColor': '#FFE4B5', 'tertiaryColor': '#FFFACD'}}}%%
+flowchart TD
+    subgraph L1 ["Layer 1: Visual Cockpit - Backstage React Portal"]
+        UI["Backstage UI & A2UI VDOM Mesh"] <--> DB["SRE Output Stream & GUI Telemetry"]
+    end
+
+    subgraph L2 ["Layer 2: Control Plane - Google AX"]
+        AX["AX Single-Writer Controller"] <--> LOG[("Durable Append-Only Event Log")]
+        MCP["AX MCP Server & OTel Prometheus Exporter"]
+    end
+
+    subgraph L3 ["Layer 3: Substrate - Agent Substrate & gVisor"]
+        SUB["Substrate Scheduler & eBPF Enforcers"]
+        subgraph Sandbox ["gVisor runsc Sandbox Boundary"]
+            P1["Polecat Actor 1 (rpj)"]
+            P2["Polecat Actor 2 (rpi)"]
+        end
+    end
+
+    subgraph L4 ["Layer 4: Infrastructure & Tailscale Distribution Mesh"]
+        KRM["Unified Declarative API / KRM"] <--> EDGE["Master Node sweetsixty6 100.92.249.20"]
+    end
+
+    %% Flows & Signals
+    UI <-- "mTLS SSE / WebSockets" --> MCP
+    MCP <--> AX
+    AX -- "etcd Leases & State Recovery" --> SUB
+    SUB -- "Instant Session Teleport < 150ms" --> Sandbox
+    P1 & P2 -- "Declarative Compositions" --> KRM
+    EDGE <--> GCP[("Google Cloud Platform & K3s Edge Nodes")]
+
+    %% Nano Banana Color Theme Classes
+    classDef banana fill:#FFF205,stroke:#D4AF37,stroke-width:2px,color:#000000;
+    classDef peel fill:#FFE135,stroke:#C2B280,stroke-width:2px,color:#000000;
+    classDef soft fill:#FFFDD0,stroke:#EEDC82,stroke-width:1.5px,color:#000000;
+    classDef steel fill:#1E293B,stroke:#334155,stroke-width:1px,color:#FFFFFF;
+
+    class UI,DB banana;
+    class AX,MCP,LOG peel;
+    class SUB,P1,P2,Sandbox soft;
+    class KRM,EDGE,GCP steel;
 ```
 
-I'm Enterprise Architect with Google's [Cloud](https://cloud.google.com) team. I meet innovative teams and together we discuss their future with Google Cloud Platform, ensuring that tough engineering problems are solved, and we elevate to the next step in digitalization.
+---
 
-{: .box-warning}
-`Hakuna matata` is a Swahili phrase, meaning `take it easy`
+## 🏗️ The Core Feature Matrix
 
-## Cybersecurity for the Quantum Era
+| Feature Module | Technology Stack | Key Capability & SLA |
+| :--- | :--- | :--- |
+| **SRE Output Stream** | Gemini 3.5 Pro ADK $\cdot$ W3C Trace | Real-time action plan logging, multi-turn follow-ups & 1-click JSON export |
+| **GUI Action Telemetry** | `sreAgentStore.recordGuiAction()` | Bi-directional streaming of catalog deploys & eBPF anomaly triggers to `/sre-outputs` |
+| **OpenTelemetry & Prometheus** | OTLP gRPC $\cdot$ Go Exporter $\cdot$ Grafana | Live `/metrics` exposition route & Prometheus scraper collector integration |
+| **Security Provenance** | CycloneDX v1.5 $\cdot$ Trivy $\cdot$ Cosign | Restored SBOM package tree, Trivy zero-vuln audits & Cosign Rekor `#1849204` SLSA-3 cards |
+| **Single-View Infrastructure** | K3s Edge $\cdot$ Tailscale Mesh | Consolidated topology visualizer mapping `sweetsixty6` to worker nodes (`rpi`, `rpj`, `rpk`, `raspberry`) |
+| **Tekton Execution Stream** | `kubectl logs` $\cdot$ `tkn` CLI | Real-time line-by-line pipeline logs (`git-clone` $\rightarrow$ `kaniko` $\rightarrow$ `trivy` $\rightarrow$ `cosign` $\rightarrow$ `k3s-deploy`) |
+| **Pure TypeScript Container SLA** | 2-Stage Node 20 Alpine Vite React | Dropped Flutter compilation bottleneck, reducing Tekton container build SLA from **20min to <30s** |
+| **Workstation Deployment CLI** | Bash `scripts/build-deploy.sh` | Interactive agent-free CLI with step confirmations `[y/N]`, ERR traps, and log streaming |
+| **Visual Cockpit** | React $\cdot$ A2UI VDOM Engine | 60-FPS RFC 6902 incremental patch engine & FlatBuffer frame decodes |
 
-As we enter the Quantum Era, cybersecurity threats are evolving. Quantum computers are expected to soon break public-key cryptography, putting your sensitive data at risk. To meet these current and emerging threats, it’s vital that your organization become [crypto-agile](https://cloud.google.com/blog/products/identity-security/how-google-is-preparing-for-a-post-quantum-world)
+---
 
-## philosophy
+## 🚀 Delivery Pipeline & CLI Commands
 
-I’m a passionate technologist with a recognized customer centric attitude working for over twenty years in IT.  I strive to provide my teams with the best solutions taking into account their needs and expectations. This produced xx successful projects to launch and land.  In my role, I’ve been  designing and developing architectures for on-premise and cloud based systems to solve large global organizations business requirements.  I have a natural leadership that expresses best when organizing cross functional teams around concrete goals.
+Builds follow a hardened **Tekton** path executing pure TypeScript Node.js **Kaniko** builds (<30s SLA):
+`Git Push` $\rightarrow$ `Kaniko Container Build (<30s)` $\rightarrow$ `Trivy PVC Cache Audit` $\rightarrow$ `Cosign SLSA-3 Attestation` $\rightarrow$ `K3s Rolling Update`.
 
-{: .box-error}
-literally `hakuna` there are no; : `matata` worries
+### Standalone Edge Workstation CLI Usage:
+```bash
+# Interactive step-by-step confirmation mode:
+./scripts/build-deploy.sh
 
-![Yellow Duck](/assets/img/einstein.jpg 'avatar')
+# Unattended auto-approve mode:
+./scripts/build-deploy.sh -y
+```
 
-### Work Experience
+---
 
-#### Customer Engineer @ Google; September  2018 - Present
+## 🤝 Contributing
+Aether is rooted in an open-source, engineering-first culture. We value **declarative state**, **strong isolation boundaries**, and **sub-second observability**.
 
-- Cloud  Architect for EU public sector
-
-#### Systems Engineer @ Cisco; June  2006 - August 2018
-
-- Solutions Architect for EU institutions, NATO and Belgian Governments
-
-#### IT manager @ Missil Petroleum; September 2002 - June 2006
-
-- Responsible for IT operations
-  - Implemented ERP, Mail and many other Intranet systems (Linux)
-  - Designed and maintained networks: LAN, WAN, VPN's; 2 HQ and 35 branches. 
-  - Implemented smart-metering solution for the  gas-stations network and main HQ stock. 
-  - Worked on the company communications strategy; defined new channels of communications; created and maintained company website's www.missil.be. 
-  - designed the new company logo
-
-#### garage mechanics
-- [gcs](https://netdev.be)
-- [firebase](https://fb.netdev.be/)
-- [beyond](https://beyond.netdev.be/)
-- [captcha](https://web3.netdev.be/)
-- [github.io](https://blog.netdev.be)
-- self [gh.md](https://v3.netdev.be)
-
-### also human
-
-3 kids, cyclist, snowboarder, basketball, field hockey
-
-### social stuff
-
-- [Twitter](https://twitter.com/jpaquay)
-- [LinkedIn](https://linkedin.com/in/jeromepaquay)
+*Built with ❤️ by the Agentic Platform Team.*
