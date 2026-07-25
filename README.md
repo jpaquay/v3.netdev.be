@@ -104,4 +104,4 @@ Builds follow a hardened **Tekton** path executing pure TypeScript Node.js **Kan
 ## 🤝 Contributing
 Aether is rooted in an open-source, engineering-first culture. We value **declarative state**, **strong isolation boundaries**, and **sub-second observability**.
 
-*Built with ❤️ by the Agentic Platform Team at * ⚡**[web3.netdev.be](https://web3.netdev.be/)**⚡
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
