@@ -163,5 +163,7 @@ Instead of forcing the Backstage UI to repeatedly poll the K3s API server for ag
 * Provisioned the Always-On Cloud Run Gen2 Tailscale Subnet Router (`aether-tailscale-router`, `min-instances=1`, `cpu-throttling=false`) in Google Cloud `europe-west1` with Direct VPC Egress (`0.538ms` RTT) and Secret Manager in-memory `tmpfs` (`0600`) state persistence.
 * Connected all 9 React 19 frontend views, Express BFF, and Voice SRE Terminal to live edge and cloud telemetry.
 
+<!-- BEGIN_FOOTER -->
 ---
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->

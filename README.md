@@ -144,4 +144,7 @@ go test -v ./...
 
 Aether is rooted in an open-source, engineering-first culture. We value **declarative state**, **strong zero-trust isolation boundaries**, and **sub-second observability**.
 
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+<!-- BEGIN_FOOTER -->
+---
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->

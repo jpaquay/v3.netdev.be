@@ -72,5 +72,7 @@ All microservices are active and serving traffic across `agentic-platform`, `tek
 *   `otel-collector` (OpenTelemetry gRPC Receiver) — **Healthy & Collecting (Port 4317)**
 *   `trivy-scan` & `kaniko-local-sa` (Tekton Runners) — **Active (<30s Build SLA)**
 
+<!-- BEGIN_FOOTER -->
 ---
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->

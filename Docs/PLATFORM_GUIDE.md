@@ -121,5 +121,7 @@ Aether employs administrative **REST endpoints** managed by **The Mayor** servic
 *   **Observability & Security:** OpenTelemetry Collector (OTLP gRPC 4317), Prometheus, Trivy CVE Scanner with PVC Cache, Cosign Keyless PKI (Rekor #1849204), CycloneDX v1.5 SBOM, SPIFFE/SPIRE X.509 mTLS.
 *   **Sandboxing & Hybrid Infrastructure:** gVisor (`runsc`), K3s ARM64/AMD64, Tailscale Mesh (WireGuard `Noise_IKpsk2`), Auto-DB Single-Writer WAL, Google Cloud Run Gen2 & GKE Autopilot ARM64 (`europe-west1` / `europe-west4`), Crossplane (IaC / KRM), Tekton (Automated Kaniko CI pipelines <30s SLA).
 
+<!-- BEGIN_FOOTER -->
 ---
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->

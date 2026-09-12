@@ -758,6 +758,7 @@ Phase    Milestone Code    Description                                         D
 3. **Upgrade Dependencies**: Move from Crossplane `v1alpha1` static K8s provider objects to Crossplane `v2.3` schema composition pipelines.
 4. **Enforce Zero-Trust Mesh**: Mandatory mTLS via SPIRE over WireGuard mesh tunnels for all inter-agent and UI communications.
 
+<!-- BEGIN_FOOTER -->
 ---
-*Comprehensive Master Blueprint & Roadmap for the Aether Agentic Engineering Platform.*  
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->

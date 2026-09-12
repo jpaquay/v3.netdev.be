@@ -92,5 +92,7 @@ Aether uses **Auto-DB**: stateless Cloud Run instances auto-discover the primary
 **Q: How are Tailscale cryptographic keys protected in Cloud Run?**
 The subnet router loads its authenticated state from Google Cloud Secret Manager (`TAILSCALE_STATE`) strictly into root-only in-memory `tmpfs` (`/tmp/tailscale.state`, `chmod 0600`) at boot, with zero disk persistence and enforced HTTP key redaction (`private_key_http_redaction: ENFORCED`).
 
+<!-- BEGIN_FOOTER -->
 ---
-*Made with ❤️ by **Netdev** · ⚡[netdev.be](https://netdev.be)⚡*
+*Built with ❤️ by the Agentic Platform Team at ⚡[web3.netdev.be](https://web3.netdev.be/)⚡*
+<!-- END_FOOTER -->
